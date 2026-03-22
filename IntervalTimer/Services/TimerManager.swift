@@ -193,6 +193,7 @@ final class TimerManager {
     }
 
     private func speak(_ text: String) {
+        synthesizer.stopSpeaking(at: .immediate)
         let utterance = AVSpeechUtterance(string: text)
         utterance.volume = 0.5
         utterance.rate = AVSpeechUtteranceDefaultSpeechRate

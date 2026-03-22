@@ -35,7 +35,7 @@ An iOS port of the Android Interval Timer app. A clean, dark-themed workout time
 
 ## Key Design Decisions
 - No foreground service needed — iOS keeps the app alive with audio session active
-- AVSpeechSynthesizer at 50% volume to blend with background music
+- AVSpeechSynthesizer at 50% volume to blend with background music. Cancels in-progress speech before starting new announcements via `stopSpeaking(at: .immediate)`.
 - Timer uses Foundation `Timer` on main actor (simpler than Android's coroutine approach)
 - Navigation via `NavigationStack` + `NavigationPath` for programmatic push/pop
 
